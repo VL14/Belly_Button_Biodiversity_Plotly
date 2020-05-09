@@ -8,9 +8,71 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
     <script src="samples.json"></script>
+    <style>
+        .jumbotron{
+            background-color: rgba(8, 124, 124, 0.788);
+            padding: 3px;
+            }
+        .jumbotron h1{
+            text-align: center;
+            color:white;
+            font-size: 50px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .jumbotron p{
+            text-align: center;
+            color:white;
+            font-size: 24px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        img{
+            position: relative;
+            left: 40%;
+
+        }
+    </style>
 </head>
+
 <body>
-    <div id="barchart"></div>
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+            <h1>Belly Button Biodiversity Dashboard</h1>
+            
+            <img src="belly_button.jpg" class="center-block" alt="belly button image" style = "width: 20%">
+            
+            <p>Use the interactive charts below to explore the dataset.</p>
+        </div>
+    </div>
+    
+        
+    <div class="container">
+        <div class="row">
+            <div class = "col-md-6">
+                <h2>Select Sample</h2>
+                <select id="selDataset" onchange="changeData(this.value)">
+                    <option value="us">OTU1</option>
+                    <option value="uk">OTU2</option>
+                    <option value="canada">OTU3</option>
+                </select>
+                <!-- Set up sample metadata table -->
+
+            </div>
+
+            <div class = "col-md-6">
+                <h1>Bar Chart Here</h1>    
+                <div id="barchart"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class = "col-md-12">
+                <h1>Bubble Chart Here</h1>
+            <div id="bubblechart"></div>
+            </div>
+        </div>
+
+    </div>
+
     <script src="plots.js"></script>
 </body>
 </html>
