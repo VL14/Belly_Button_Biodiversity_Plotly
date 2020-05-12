@@ -1,35 +1,47 @@
-// Show default bar chart
-// Pull data from json file via Flask website
-function init() {
-  d3.json("/samples.json").then(function(data) {
-    var values = data.samples[0].sample_values;
-    var labels = data.samples[0].otu_ids;
-    var hovertext = data.samples[0].otu_labels;
-  
+// Pull values from data file for default chart
+d3.json("/samples.json").then(function(data) {
+  var values = data.samples[0].sample_values;
+  var labels = data.samples[0].otu_ids;
+  var hovertext = data.samples[0].otu_labels;
+  //console.log(`Sample values: ${values}`);
+  //console.log(`OTU IDs: ${labels}`);
+  //console.log(`OTU labels: ${hovertext}`);
 
+  // Slice values to get first 10 for chart
+  var x = values.slice(0,10);
+  var y = labels.slice(0,10);
+  var t = hovertext.slice(0,10);
+  console.log(x);
+  
+  // Create default bar chart
   var trace1 = {
-      x: values[0][0],
-      y: labels[0][0],
-      text: hovertext[0][0],
-      name: "Bar Chart",
-      type: "bar"
-    };
+    x: x,
+    y: y,
+    text: t,
+    name: "Bar Chart",
+    type: "bar"
+  };
 
   var layout = {
-    title: "Bar Chart"
-    };
+    title: "Bar Chart",
+    xaxis: {
+      showgrid: true
+    },
+    plot_bgcolor: "#c7c7c7"
+  };
 
-  console.log(values);
-
-  // Render the plot to the div tag with id "barchart"
+  // Clear any existing data
+  d3.select("#bar").node().value = "";
+  
+  // Render the plot to the div tag with id "bar"
   Plotly.newPlot("bar", trace1, layout);
-  });
-}
 
-init();
+});
+
+
+//init();
 
 // Dropdown Code
-// On change to the DOM, call getData()
 d3.selectAll("#selDataset").on("change", changeData);
 
 // Function called by DOM changes
@@ -38,7 +50,7 @@ function changeData() {
   var dropdownMenu = d3.select("#selDataset");
 
   // Prevent the page from refreshing
-  //d3.event.preventDefault();
+  d3.event.preventDefault();
 
   // Get the value of the dropdown menu
   var selection = dropdownMenu.property("value");
@@ -46,27 +58,11 @@ function changeData() {
   // Get values for dropdown menu
   d3.json("samples.json").then(function(data) {
     var selections = data.names;
-    console.log(selections);
+    console.log(`Dropdown selections: ${selections}`);
   
-
   // Set dropdown values to html
   selections.forEach((sample) => {
     dropdownMenu.append(sample).text(sample).property("value",sample);
   })
 });
 }
-
-changeData();
-
-  // Set new bar chart values
-
-  // Set new Sample Data values
-
-  // Call function to update the chart
-  //updatePlotly(data);
-
-
-// Update the restyled plot's values
-//function updatePlotly(newdata) {
-//  Plotly.restyle("barchart", "values", "labels", "text", //[newdata]);
-//}
