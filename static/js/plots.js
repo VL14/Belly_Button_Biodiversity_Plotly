@@ -24,17 +24,20 @@ function makeCharts(index) {
     }];
 
     var layout = {
-      title: "Bar Chart",
-      height: "400px",
-      width: "200px",
+      title: "<b>Top 10 OTUs Per Subject</b>",
+      height: "600px",
+      width: "400px",
       xaxis: {
-        showgrid: true
+        showgrid: true,
+        title: 'Value'
       },
       plot_bgcolor: "#fafafa"
     };
 
     // Render the plot to the div tag with id "bar"
     Plotly.newPlot("bar", trace1, layout);
+
+    console.log(sample_values);
 
     // BUBBLE CHART SETUP
     var trace2 = [{
@@ -43,16 +46,20 @@ function makeCharts(index) {
       text: otu_labels,
       mode: 'markers',
       marker: {
-        color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
-        size: sample_values
-      }
+        size: sample_values,
+        color: otu_ids_raw,
+        colorscale: 'plasma'
+        //[[0, 'rgb(0, 255, 0)'], [1, 'rgb(0, 0, 0)']],
+        }
     }];
 
     var layout = {
-      title: 'Bubble Chart',
+      title: '<b>Bacteria Found In Each Subject</b>',
       showlegend: false,
       height: 600,
-      width: 600
+      width: 1000,
+      xaxis: {title: 'OTU ID'},
+      yaxis: {title: 'Value'}
     };
 
     Plotly.newPlot('bubble', trace2, layout);
