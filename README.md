@@ -9,8 +9,10 @@ Using the JSON file provided, Javascript, D3, and Plotly, the following were cre
 
 2. A horizontal bar chart to display the top 10 OTUs found in the chosen individual.
 
-3. A bubble chart that displays the OTUs for each individual.
+3. A bubble chart that displays the OTUs for each individual. Bubble sizes are linked to counts, while bubble colors are linked to OTU IDs.
 
 4. A table with the individual's demographic information.
 
 The charts and table are updated each time a new ID is selected from the dropdown menu.
+
+Direct link to Github site: https://vl14.github.io/biodiversity/
