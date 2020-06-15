@@ -1,5 +1,5 @@
 **Belly Button Biodiversity Interactive Dashboard**
-In this activity, I built an interactive dashboard using the Belly Button biodiversity dataset (http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that that can be found in human belly buttons.
+In this activity, I built an interactive dashboard using the Belly Button biodiversity dataset (http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that can be found in human belly buttons.
 
 The dataset reveals that a small handful of microbial species (also called Operational Taxonomic Units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
