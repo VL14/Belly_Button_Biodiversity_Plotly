@@ -1,12 +1,31 @@
 # Belly Button Biodiversity Interactive Dashboard
+This project is a part of the Data Analytics Bootcamp at Case Western Reserve University.
+
+#### -- Project Status: Completed
+
+## Project Intro/Objective
 Interactive dashboard using the Belly Button biodiversity dataset (http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that can be found in human belly buttons.
 
 The dataset reveals that a small handful of microbial species (also called Operational Taxonomic Units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 ![bellybutton](https://github.com/VL14/Belly_Button_Biodiversity_Plotly/blob/master/images/belly_button.jpg)
 
-## Dashboard Summary
+#### Dataset
+The dataset included data for 661 test subjects.
 
-Using the JSON file provided, Javascript, D3, and Plotly, the following were created:
+### Methods Used
+* Webpage Creation
+* Data Visualization
+* Promise Functions
+
+### Technologies
+* D3
+* JavaScript
+* Plotly
+* HTML/CSS
+
+## Project Description
+
+Using the JSON file provided, the following were created:
 
 1. A dropdown menu with a list of test subject ID numbers to choose from. These numbers were populated from the JSON file using D3 and Javascript.
 
