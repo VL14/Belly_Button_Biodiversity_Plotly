@@ -20,4 +20,4 @@ The charts and table are updated each time a new ID is selected from the dropdow
 
 ## Link To Dashboard
 
-Direct link to Github site: https://vl14.github.io/biodiversity/
+Direct link to Github site: https://vl14.github.io/Belly_Button_Biodiversity_Plotly/
