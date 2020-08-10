@@ -17,6 +17,7 @@ Using the JSON file provided, Javascript, D3, and Plotly, the following were cre
 4. A table with the individual's demographic information.
 
 The charts and table are updated each time a new ID is selected from the dropdown menu.
+![bubblechart](https://github.com/VL14/Belly_Button_Biodiversity_Plotly/blob/master/images/bubble_chart.JPG)
 
 ## Link To Dashboard
 
